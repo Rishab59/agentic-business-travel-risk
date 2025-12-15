@@ -1,0 +1,23 @@
+python -m venv .venv
+
+.venv\Scripts\activate
+
+python -m pip install --upgrade pip
+
+pip --version
+
+pip install azure-identity
+
+pip install azure-ai-projects
+
+pip install python-dotenv
+
+pip show python-dotenv
+
+cd .\tests\env_checks\
+
+python .\check_env.py
+
+cd ..\connectivity_checks\
+
+python .\check_azure_connection.py
