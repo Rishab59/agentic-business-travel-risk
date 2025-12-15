@@ -37,3 +37,7 @@ python .\test_agent_basic_run.py
 cd ..\app\
 
 python .\question_classifier.py
+
+cd ..\tests\functionality_checks\
+
+python .\question_classifier_test.py
