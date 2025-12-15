@@ -1,0 +1,9 @@
+azure-identity
+
+azure-ai-projects
+
+python-dotenv
+
+faiss-cpu
+
+sentence-transformers

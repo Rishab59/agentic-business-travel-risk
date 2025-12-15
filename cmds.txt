@@ -41,3 +41,13 @@ python .\question_classifier.py
 cd ..\tests\functionality_checks\
 
 python .\question_classifier_test.py
+
+cd ..\..\
+
+pip install faiss-cpu
+
+python -c "import faiss; print('FAISS OK')"
+
+pip install sentence-transformers
+
+python -c "from sentence_transformers import SentenceTransformer; print('Embeddings OK')"
