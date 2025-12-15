@@ -51,3 +51,7 @@ python -c "import faiss; print('FAISS OK')"
 pip install sentence-transformers
 
 python -c "from sentence_transformers import SentenceTransformer; print('Embeddings OK')"
+
+cd .\rag\
+
+python .\ingest_initial_knowledge.py

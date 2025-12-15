@@ -8,6 +8,7 @@ PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")
 
 sys.path.append(PROJECT_ROOT)
 
+
 from app.question_classifier import classify_question, QuestionType
 
 questions = [
