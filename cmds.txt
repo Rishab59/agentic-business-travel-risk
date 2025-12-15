@@ -21,3 +21,11 @@ python .\check_env.py
 cd ..\connectivity_checks\
 
 python .\check_azure_connection.py
+
+cd ../../agents
+
+python .\create_agents.py
+
+cd ..\tests\env_checks\
+
+python .\check_agent_id.py
