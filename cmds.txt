@@ -29,3 +29,7 @@ python .\create_agents.py
 cd ..\tests\env_checks\
 
 python .\check_agent_id.py
+
+cd ..\..\agents\
+
+python .\test_agent_basic_run.py
