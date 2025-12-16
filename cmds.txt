@@ -55,3 +55,13 @@ python -c "from sentence_transformers import SentenceTransformer; print('Embeddi
 cd .\rag\
 
 python .\ingest_initial_knowledge.py
+
+cd ..\tests\functionality_checks\
+
+python .\rag_known_unknown_test.py
+
+---
+(if issues)
+
+python -c "from rag.vector_store import VectorStore; vs=VectorStore(384); print('Vectors:', vs.index.ntotal); print('Metadata:', len(vs.metadata))"
+---

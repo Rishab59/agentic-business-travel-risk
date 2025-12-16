@@ -16,7 +16,7 @@ class VectorStore:
 
         self.meta_path = index_path + ".meta"
 
-        if os.path.exists(self.index_path):
+        if os.path.exists(self.index_path) and os.path.exists(self.meta_path):
 
             self.index = faiss.read_index(self.index_path)
 
@@ -30,9 +30,19 @@ class VectorStore:
 
             self.metadata = []
 
+    def _normalize(self, vector):
+
+        vector = np.array(vector, dtype="float32")
+
+        faiss.normalize_L2(vector)
+
+        return vector
+
     def add(self, embedding, meta):
 
-        embedding = np.array([embedding]).astype("float32")
+        embedding = np.array([embedding], dtype="float32")
+
+        faiss.normalize_L2(embedding)
 
         self.index.add(embedding)
 
@@ -40,27 +50,49 @@ class VectorStore:
 
         self._persist()
 
-    def search(self, embedding, top_k: int = 1):
+    def search(self, embedding, top_k: int = 1, distance_threshold: float = 0.7):
 
-        embedding = np.array([embedding]).astype("float32")
+        """
+
+        distance_threshold:
+
+        - 0.0 → identical
+
+        - ~0.3–0.7 → similar
+
+        - >0.9 → unrelated
+
+        """
+
+        if self.index.ntotal == 0:
+
+            return None
+
+        embedding = np.array([embedding], dtype="float32")
+
+        faiss.normalize_L2(embedding)
 
         distances, indices = self.index.search(embedding, top_k)
 
-        results = []
+        idx = int(indices[0][0])
 
-        for idx, dist in zip(indices[0], distances[0]):
+        dist = float(distances[0][0])
 
-            if idx < len(self.metadata):
+        if idx == -1 or idx >= len(self.metadata):
 
-                results.append({
+            return None
 
-                    "distance": float(dist),
+        if dist > distance_threshold:
 
-                    "metadata": self.metadata[idx]
+            return None
 
-                })
+        return {
 
-        return results
+            "distance": dist,
+
+            "metadata": self.metadata[idx]
+
+        }
 
     def _persist(self):
 
