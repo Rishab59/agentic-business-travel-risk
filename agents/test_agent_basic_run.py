@@ -1,3 +1,48 @@
+import sys
+
+import os
+
+# Add project root to Python path
+
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+
+sys.path.append(PROJECT_ROOT)
+
+
+import os
+from dotenv import load_dotenv
+from app.app_entry import TravelRiskApp
+
+
+def main():
+    load_dotenv()
+    
+    agent_id = os.getenv("AGENT_ID")
+    if not agent_id:
+        raise ValueError("AGENT_ID not set in environment")
+
+    app = TravelRiskApp(agent_id)
+
+    print("Business Travel Risk Agent Ready")
+    print("Type 'exit' to quit\n")
+
+    while True:
+        question = input("User: ")
+        if question.lower() == "exit":
+            break
+
+        response = app.process_question(question)
+
+        print("\nAgent Response:")
+        for k, v in response.items():
+            print(f"{k}: {v}")
+        print("-" * 40)
+
+
+if __name__ == "__main__":
+    main()
+
+'''
 import os
 
 import time
@@ -69,3 +114,5 @@ for msg in messages:
         print("\nAgent Response:\n")
 
         print(msg.content[0].text)
+
+'''
