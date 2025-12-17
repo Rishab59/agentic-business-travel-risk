@@ -6,15 +6,21 @@ import pickle
 
 import numpy as np
 
+# Absolute base directory of the project
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 class VectorStore:
 
-    def __init__(self, dim: int, index_path: str = "data/faiss.index"):
+    def __init__(self, dim: int, index_path: str = None):
 
         self.dim = dim
 
-        self.index_path = index_path
+        # Always use a single global FAISS index path
 
-        self.meta_path = index_path + ".meta"
+        self.index_path = index_path or os.path.join(BASE_DIR, "data", "faiss.index")
+
+        self.meta_path = self.index_path + ".meta"
 
         if os.path.exists(self.index_path) and os.path.exists(self.meta_path):
 
@@ -29,14 +35,6 @@ class VectorStore:
             self.index = faiss.IndexFlatL2(dim)
 
             self.metadata = []
-
-    def _normalize(self, vector):
-
-        vector = np.array(vector, dtype="float32")
-
-        faiss.normalize_L2(vector)
-
-        return vector
 
     def add(self, embedding, meta):
 
@@ -54,13 +52,11 @@ class VectorStore:
 
         """
 
-        distance_threshold:
+        Returns:
 
-        - 0.0 → identical
+        - None → UNKNOWN question
 
-        - ~0.3–0.7 → similar
-
-        - >0.9 → unrelated
+        - dict → KNOWN question
 
         """
 

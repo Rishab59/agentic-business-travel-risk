@@ -1,3 +1,6 @@
+---
+(after clone run)
+
 python -m venv .venv
 
 .venv\Scripts\activate
@@ -5,6 +8,10 @@ python -m venv .venv
 python -m pip install --upgrade pip
 
 pip --version
+
+python rag\ingest_initial_knowledge.py
+
+---
 
 pip install azure-identity
 
