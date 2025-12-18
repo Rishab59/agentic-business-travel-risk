@@ -31,7 +31,7 @@ python .\check_azure_connection.py
 
 cd ../../agents
 
-python .\create_agents.py
+python .\create_agent.py
 
 cd ..\tests\env_checks\
 
@@ -72,3 +72,7 @@ python .\rag_known_unknown_test.py
 
 python -c "from rag.vector_store import VectorStore; vs=VectorStore(384); print('Vectors:', vs.index.ntotal); print('Metadata:', len(vs.metadata))"
 ---
+
+cd ..\..\
+
+python .\agents\test_agent_basic_run.py
