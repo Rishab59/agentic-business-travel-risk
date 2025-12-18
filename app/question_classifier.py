@@ -32,9 +32,11 @@ def classify_question(question: str) -> QuestionType:
 
     q = question.lower()
 
+    tokens = q.split()
+
     for word in CONFIDENTIAL_KEYWORDS:
 
-        if word in q:
+        if word in q and any(w in tokens for w in word.split()):
 
             return QuestionType.CONFIDENTIAL
 

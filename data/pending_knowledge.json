@@ -1,4 +1,30 @@
 [
   {
-    "question": "is visa required for business travel to germany?",
-    "draft_answer": 
+    "question": "what's the dress code for office in japan",
+    "draft_answer": "{'value': \"The dress code for offices in Japan can vary significantly depending on the company and its culture. Generally, many Japanese companies prefer business formal attire, which typically includes dark suits for men and professional dresses or suits for women. However, some companies, especially in creative industries or startups, may adopt a more casual approach.\\n\\nIt's important to note that individual company policies may differ, and regional variations also exist across the country. Therefore, I recommend checking your specific company's guidelines or consulting with a local colleague for the most accurate and suitable dress code expectations for your office in Japan. \\n\\nPlease remember that this information is not a legal guarantee, and it's always best to verify with your HR department or relevant company policies.\", 'annotations': []}",
+    "source": "azure-agent",
+    "status": "PENDING_REVIEW",
+    "created_at": "2025-12-18T06:39:49.738051"
+  },
+  {
+    "question": "What visa is required for business travel to Germany?",
+    "draft_answer": "{'value': \"The visa requirements for business travel to Germany vary based on the traveler’s nationality, the purpose of the visit, and the length of stay. Generally, a Schengen Visa is required for short business trips (up to 90 days) for citizens of countries that do not have a visa waiver agreement with the Schengen Area.\\n\\nHowever, policies regarding visas can differ depending on your company’s travel policy as well as the specific requirements of your home country. It is advisable to check with your travel department or local embassy or consulate for the most accurate and detailed information regarding visa applications and requirements.\\n\\nPlease note that I cannot provide legal guarantees or specific advice, and it's important to ensure compliance with all relevant regulations.\", 'annotations': []}",
+    "source": "azure-agent",
+    "status": "PENDING_REVIEW",
+    "created_at": "2025-12-18T06:40:43.902937"
+  },
+  {
+    "question": "what's the dress code for office in japan",
+    "draft_answer": "{'value': \"The dress code for offices in Japan can vary depending on the company and industry. Generally, Japanese corporate culture leans towards formal and conservative attire, especially in more traditional companies. Common dress codes may require business suits for men and women, with an emphasis on neutral colors and polished footwear.\\n\\nHowever, it's important to note that some companies may operate in a more casual environment, particularly in creative sectors or start-ups. Therefore, it is advisable to consult your company's specific dress code policy or reach out to your local HR department for guidance tailored to your workplace and the specific location in Japan you will be visiting. Always remember that adherence to local customs and company policies is essential when dressing for business in a foreign country.\", 'annotations': []}",
+    "source": "azure-agent",
+    "status": "PENDING_REVIEW",
+    "created_at": "2025-12-18T06:54:01.817077"
+  },
+  {
+    "question": "Are there any mandatory vaccinations for travel to Brazil?",
+    "draft_answer": "{'value': \"Travelers to Brazil may be required to have certain vaccinations, such as yellow fever, especially if coming from countries where the disease is present. However, vaccination requirements can vary based on individual circumstances, such as the traveler's health status, itinerary, and the policies of specific companies or health authorities.\\n\\nIt’s important to check with your company’s travel policy, as well as consult with a healthcare provider or travel medicine clinic for personalized advice. Additionally, the requirements can differ based on the country of origin and may change over time, so staying informed is essential. Please note, I am not providing legal guarantees, and it is advisable to verify this information with official health resources or authorities.\", 'annotations': []}",
+    "source": "azure-agent",
+    "status": "PENDING_REVIEW",
+    "created_at": "2025-12-18T07:03:27.949353"
+  }
+]

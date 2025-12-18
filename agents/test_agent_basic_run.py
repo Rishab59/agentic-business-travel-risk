@@ -9,7 +9,6 @@ PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.append(PROJECT_ROOT)
 
 
-import os
 from dotenv import load_dotenv
 from app.app_entry import TravelRiskApp
 
